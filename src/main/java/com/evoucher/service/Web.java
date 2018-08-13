@@ -10,13 +10,13 @@ import com.evoucher.repository.IssueEvoucherRepository;
 
 @RestController
 public class Web {
-	IssueEvoucherService issueS;
+	IssueEvoucherServiceImpl issueS;
 	@Autowired
 	IssueEvoucherRepository c;
 	
 	@GetMapping("/issue/{voucherNumber}")
 	public Evoucher save(@PathVariable String voucherNumber){
-		issueS = new IssueEvoucherService(c);
+		issueS = new IssueEvoucherServiceImpl(c);
 		return issueS.issueEvoucher(voucherNumber);
 	}
 
